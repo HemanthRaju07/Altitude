@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+  
+  .glass-card-dark {
+    background: rgba(19, 27, 46, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(45, 55, 72, 0.6);
+  }
+
+  .pulse-ring {
+    animation: pulse-ring-anim 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  }
+
+  .pulse-glow {
+    animation: glow-pulse-anim 3s ease-in-out infinite alternate;
+  }
+
+  .waveform-bar {
+    animation: wave-bounce 1.2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes pulse-ring-anim {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(33, 112, 228, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(33, 112, 228, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(33, 112, 228, 0);
+  }
+}
+
+@keyframes glow-pulse-anim {
+  0% {
+    box-shadow: 0 0 15px rgba(33, 112, 228, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.4);
+  }
+}
+
+@keyframes wave-bounce {
+  0% {
+    height: 15%;
+  }
+  100% {
+    height: 85%;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 174, 192, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 174, 192, 0.6);
+}
+
